@@ -1,9 +1,9 @@
-const Product = () => {
+const Product = (props) => {
     return  (
         <article>
-            <img src="" alt="" />
-            <p>Prezzo: 1000€</p>
-            <h4>Prodotto mittticco</h4>
+            <img src={props.img} alt="" />
+            <p>{props.price}</p>
+            <h4>{props.title}</h4>
         </article>
     )
 }
