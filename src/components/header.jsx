@@ -1,8 +1,7 @@
-
 const Header = () => {
     return (
-        <header>
-        <img src="" alt="React ecommerce" />
+        <header className="header">
+        <img src="/logo-ecommerce.png" width="254" height="22" alt="React ecommerce" />
         <form>
             <input type="text" placeholder="Search..." />
         </form>

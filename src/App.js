@@ -11,7 +11,7 @@ function App() {
   return (
     <main>
       <Header />
-      <div className="flex">
+      <div className="content">
         <Sidebar />
         <List />
       </div>

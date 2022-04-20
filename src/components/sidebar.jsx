@@ -17,7 +17,7 @@ const Sidebar = () => {
     }, []);
   
     return (
-      <aside>
+      <aside className="sidebar">
         <h2>Categories</h2>
         <ul>
           {categories.map((item, index) => (

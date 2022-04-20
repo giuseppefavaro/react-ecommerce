@@ -22,8 +22,8 @@ export const List = () => {
 
 
   return (
-    <section>
-      <ul className="grid">
+    <section className="products">
+      <ul className="productsGrid">
         {products.map((item, index) => (
           <li key={index}>
             <Product img={item.image} title={item.title} price={item.price} />
