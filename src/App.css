@@ -85,6 +85,12 @@ ul.productsGrid {
   row-gap: 20px;
 }
 
+ul.productsGrid li.loading p,
+ul.productsGrid li.loading h4 {
+  background-color: #ECEFF1;
+}
+
+
 
 
 /* Product *********************************************/
@@ -121,3 +127,11 @@ ul.productsGrid {
 .product h4 {
   padding: 20px;
 }
+
+
+
+
+
+
+
+
