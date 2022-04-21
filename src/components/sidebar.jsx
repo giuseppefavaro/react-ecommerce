@@ -3,18 +3,30 @@ import { useState, useEffect } from "react";
 const mock = ["category 1", "category 2", "category 3"];
 
 
-const Sidebar = () => {
+const Sidebar = (props) => {
     const [categories, setCategories] = useState(mock);
   
     const getData = async () => {
       const response = await fetch("https://fakestoreapi.com/products/categories/");
       const data = await response.json();
       setCategories(data);
+      data.unshift("All");
     };
 
     useEffect(() => {
       getData();
     }, []);
+
+
+
+
+    const clicked = (event, category) => {
+      event.preventDefault();
+      // console.log(category);
+      props.catSelection(category);
+    };
+
+    
   
     return (
       <aside className="sidebar">
@@ -22,8 +34,10 @@ const Sidebar = () => {
         <ul>
           {categories.map((item, index) => (
             <li key={index}>
-              <a href={item}>{item}</a>
-            </li>
+            <a href={item} onClick={(event) => clicked(event, item)}>
+              {item}
+            </a>
+          </li>
           ))}
         </ul>
       </aside>
