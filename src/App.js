@@ -14,6 +14,15 @@ function App() {
 
   const [category, setCategory] = useState("");
 
+  const [search, setSearch] = useState("");
+
+
+  const textSearch = (value) => {
+    // console.log(value);
+    setSearch(value);
+  }
+
+
   const catSelection = (value) => {
     console.log(value);
     setCategory(value);
@@ -23,10 +32,10 @@ function App() {
 
   return (
     <main>
-      <Header />
+      <Header textSearch={textSearch} />
       <div className="content">
         <Sidebar catSelection={catSelection} />
-        <List category={category} />
+        <List category={category} search={search} />
       </div>
     </main>
   );

@@ -22,11 +22,12 @@ const mock = [
   },
 ];
 
-export const List = ({category}) => {
+export const List = ({category, search}) => {
 
   const [source, setSource] = useState([]);
   const [products, setProducts] = useState(mock);
   const [isLoading, setLoading] = useState(true);
+
 
 
     const getData = async () => {
@@ -39,6 +40,7 @@ export const List = ({category}) => {
     };
 
     // console.log(products);
+    console.log(search);
 
 
     useEffect(() => { getData() }, [])
@@ -61,7 +63,17 @@ export const List = ({category}) => {
 
 
 
-    
+
+
+    useEffect(() => {
+      const filtered = source.filter(product => product.title.toLowerCase().includes(search.toLowerCase()));
+      setProducts(filtered);
+
+      // eslint-disable-next-line
+    }, [search])
+  
+
+
 
   return (
     <section className="products">

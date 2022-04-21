@@ -1,9 +1,24 @@
-const Header = () => {
+
+import { useState } from "react";
+
+const Header = (props) => {
+    
+    const [search, setSearch] = useState("");
+
+
+    const changing = (event) => {
+        setSearch(event.target.value);
+
+        props.textSearch(search);
+    };
+
+
+
     return (
         <header className="header">
         <img src="/logo-ecommerce.png" width="254" height="22" alt="React ecommerce" />
         <form>
-            <input type="text" placeholder="Search..." />
+            <input value={search} onChange={changing} type="text" placeholder="Search..." />
         </form>
         </header>
     )
