@@ -4,6 +4,9 @@ const mock = ["category 1", "category 2", "category 3"];
 
 
 const Sidebar = (props) => {
+
+    const [current, setCurrent] = useState("");
+
     const [categories, setCategories] = useState(mock);
   
     const getData = async () => {
@@ -24,6 +27,8 @@ const Sidebar = (props) => {
       event.preventDefault();
       // console.log(category);
       props.catSelection(category);
+
+      setCurrent(category);
     };
 
     
@@ -34,7 +39,7 @@ const Sidebar = (props) => {
         <ul>
           {categories.map((item, index) => (
             <li key={index}>
-            <a href={item} onClick={(event) => clicked(event, item)}>
+            <a href={item} onClick={(event) => clicked(event, item)} className={item === current ? "active" : ""}>
               {item}
             </a>
           </li>

@@ -68,6 +68,11 @@ body {
   padding: 10px
 }
 
+.sidebar ul li a.active {
+  font-weight: 700;
+  color: #FFAB00;
+}
+
 
 
 /* Products *******************************************/
