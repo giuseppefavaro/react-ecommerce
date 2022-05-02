@@ -24,7 +24,7 @@ function App() {
 
 
   const catSelection = (value) => {
-    console.log(value);
+    // console.log(value);
     setCategory(value);
   };
 

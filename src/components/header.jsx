@@ -16,7 +16,7 @@ const Header = (props) => {
 
     return (
         <header className="header">
-        <img src="/logo-ecommerce.png" width="254" height="22" alt="React ecommerce" />
+        <img src={process.env.PUBLIC_URL + '/logo-ecommerce.png'} width="254" height="22" alt="React ecommerce" />
         <form>
             <input value={search} onChange={changing} type="text" placeholder="Search..." />
         </form>

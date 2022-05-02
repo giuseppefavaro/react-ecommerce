@@ -56,7 +56,7 @@ export const List = ({category, search}) => {
         }
       });
       setProducts(filtered);
-      console.log("la categoria ora è", category, filtered);
+      // console.log("la categoria ora è", category, filtered);
   
       // eslint-disable-next-line
     }, [category]);
