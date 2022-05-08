@@ -31,13 +31,13 @@ function App() {
 
 
   return (
-    <main>
+    <>
       <Header textSearch={textSearch} />
-      <div className="content">
+      <main className="content">
         <Sidebar catSelection={catSelection} />
         <List category={category} search={search} />
-      </div>
-    </main>
+      </main>
+    </>
   );
 }
 
